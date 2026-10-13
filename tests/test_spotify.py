@@ -52,7 +52,7 @@ class SpotifyDownloadTests(unittest.TestCase):
 
     def test_successful_url_is_marked_and_failure_is_left_pending(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
-            links_path = Path(temporary_directory) / "links.txt"
+            links_path = Path(temporary_directory) / "download-links.txt"
             links_path.write_text(
                 "# Playlist\nhttps://open.spotify.com/track/ok\n"
                 "https://open.spotify.com/track/fail\n",

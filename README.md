@@ -12,8 +12,8 @@ is supported today; additional providers can live in their own folders under
 3. Double-click `providers\spotify\setup.bat`.
 4. When prompted, enter the absolute folder where downloaded music should go,
    or press Enter to use the displayed default. The folder is created if needed.
-5. Create `providers\spotify\links.txt` by copying
-   `providers\spotify\links.txt.example`, then add one Spotify URL per line.
+5. Create `providers\spotify\download-links.txt` by copying
+   `providers\spotify\download-links.txt.example`, then add one Spotify URL per line.
 6. Double-click `providers\spotify\spotify-download.bat`.
 
 The setup wizard installs Zotify from

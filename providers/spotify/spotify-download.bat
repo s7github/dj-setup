@@ -15,7 +15,7 @@ if %errorlevel%==0 (
 )
 
 if "%~1"=="" (
-    %PYTHON% "%~dp0download.py" "%~dp0links.txt"
+    %PYTHON% "%~dp0download.py" "%~dp0download-links.txt"
 ) else (
     %PYTHON% "%~dp0download.py" "%~1"
 )

@@ -4,7 +4,7 @@ __pycache__/
 .venv/
 
 # Download inputs and generated local configuration may contain personal data.
-providers/spotify/links.txt
+providers/spotify/download-links.txt
 providers/spotify/config.json
 providers/spotify/*.bak
 downloads/
