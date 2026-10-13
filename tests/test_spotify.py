@@ -20,6 +20,7 @@ class SpotifySetupTests(unittest.TestCase):
             with (
                 patch.object(setup, "config_path", return_value=config_path),
                 patch.object(setup, "choose_root_path", return_value=destination),
+                patch("sys.argv", ["setup.py"]),
             ):
                 self.assertEqual(setup.main(), 0)
 

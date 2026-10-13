@@ -14,23 +14,7 @@ if %errorlevel%==0 (
     set "PYTHON=python"
 )
 
-echo Installing Zotify...
-%PYTHON% -m pip install --upgrade git+https://github.com/Googolplexed0/zotify.git
-if errorlevel 1 (
-    echo Zotify installation failed.
-    pause
-    exit /b 1
-)
-
-echo Creating or updating Zotify configuration...
-%PYTHON% -m zotify --update-config
-if errorlevel 1 (
-    echo Zotify could not create or update its configuration.
-    pause
-    exit /b 1
-)
-
-%PYTHON% "%~dp0setup.py"
+%PYTHON% "%~dp0install.py" %*
 if errorlevel 1 (
     echo Spotify setup did not complete.
     pause

@@ -2,6 +2,7 @@ __pycache__/
 *.py[cod]
 *.tmp
 .venv/
+.serena/
 
 # Download inputs and generated local configuration may contain personal data.
 providers/spotify/download-links.txt

@@ -1,3 +1,4 @@
+import argparse
 import json
 import os
 import sys
@@ -61,10 +62,25 @@ def write_config(path: Path, config: dict) -> None:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Configure Zotify's download settings.")
+    parser.add_argument(
+        "--root-path",
+        type=Path,
+        help="Absolute folder for downloaded music (prompt if omitted).",
+    )
+    args = parser.parse_args()
+
     try:
         path = config_path()
         config = load_config(path)
-        destination = choose_root_path(config.get("ROOT_PATH"))
+        if args.root_path is None:
+            destination = choose_root_path(config.get("ROOT_PATH"))
+        else:
+            destination = Path(
+                os.path.expandvars(os.path.expanduser(str(args.root_path)))
+            )
+            if not destination.is_absolute():
+                raise RuntimeError("--root-path must be an absolute folder path.")
         destination.mkdir(parents=True, exist_ok=True)
         config["ROOT_PATH"] = str(destination)
         config.update(DEFAULTS)
